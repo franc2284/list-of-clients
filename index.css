@@ -69,7 +69,7 @@ body {
   gap: 16px;
   margin-top: 40px;
   margin-bottom: 12px;
-  margin-left: 50px;
+  margin-left: 20px;
 }
 
 .columns__item{
@@ -81,8 +81,31 @@ body {
   white-space: nowrap;
 }
 
-.columns__item--name   { flex: 0 0 20%; }
+.columns__item--name   { 
+  flex: 0 0 32%;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.columns__checkbox{
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+}
+
+.columns__checkbox-svg rect{
+  fill: none;
+  stroke: rgba(44, 54, 70, 0.64);
+  stroke-width: 2;
+}
+
+.columns__label{
+  display: inline-block;
+  line-height: 1;
+}
+
 .columns__item--company{ flex: 0 0 20%; }
-.columns__item--phone  { flex: 0 0 20%; text-align: left; }
-.columns__item--status { flex: 0 0 20%; text-align: left; }
+.columns__item--phone  { flex: 0 0 18%; text-align: left; }
+.columns__item--status { flex: 0 0 12%; text-align: left; }
 .columns__item--date   { flex: 1 1 auto;  text-align: left; }
