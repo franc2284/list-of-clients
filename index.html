@@ -3,11 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <title>Список клиентов</title>
-  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="index.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="page">
     <section class="panel">
+
       <header class="panel__header">
         <h1 class="panel__title">Список клиентов</h1>
 
@@ -18,6 +22,14 @@
           <span class="add-btn__text">Добавить</span>
         </div>
       </header>
+
+      <div class="columns">
+        <div class="columns__item columns__item--name">ИМЯ/КОНТАКТ</div>
+        <div class="columns__item columns__item--company">КОМПАНИЯ</div>
+        <div class="columns__item columns__item--phone">ТЕЛЕФОН</div>
+        <div class="columns__item columns__item--status">СТАТУС</div>
+        <div class="columns__item columns__item--date">ДАТА ДОБАВЛЕНИЯ</div>
+      </div>
 
     </section>
   </div>
