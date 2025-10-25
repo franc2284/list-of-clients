@@ -177,8 +177,67 @@ body {
 }
 
 .client-row__phone  {
-  flex: 0 0 20%;
+  flex: 0 0 19%;
   font-size: 16px;
   font-weight: 600;
   color: #2C3646;
 }
+
+.client-row__status {
+  flex: 0 0 16%;
+  display: flex;
+  align-items: center;
+}
+
+.client-row__date {
+  flex: 1 1 auto;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2C3646;
+}
+
+.client-row__menu {
+  flex: 0 0 40px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 16px;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  height: 35px;
+  padding: 8px 16px;
+  border-radius: 99px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.status-badge--active {
+  background: #CEFFCD;
+  color: #337232;
+}
+
+.menu-btn {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  background: transparent;
+  border-radius: 8px;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-btn:hover { background: rgba(44,54,70,0.08); }
+.menu-btn__icon {
+  width: 20px;
+  height: 20px;
+  fill: #2C3646;
+  opacity: 0.9;
+}
+
