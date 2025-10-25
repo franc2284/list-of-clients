@@ -247,3 +247,39 @@ body {
   opacity: 0.9;
 }
 
+.client-row__checkbox {
+  cursor: pointer;
+  user-select: none;
+}
+
+.client-row__checkbox-svg { pointer-events: none; }
+
+.client-row__checkbox-svg .cb__box {
+  fill: none;
+  stroke: rgba(44, 54, 70, 0.64);
+  stroke-width: 2;
+  transition: fill .2s ease, stroke .2s ease;
+}
+
+.client-row__checkbox-svg .cb__check {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+  transition: opacity .15s ease;
+}
+
+.client-row--selected {
+  background: #C9C0FF;
+}
+
+.client-row--selected .cb__box {
+  fill: #6f56ff;
+  stroke: #6f56ff;
+}
+.client-row--selected .cb__check {
+  opacity: 1;
+}
+
