@@ -283,3 +283,24 @@ body {
   opacity: 1;
 }
 
+.columns__checkbox { cursor: pointer; user-select: none; }
+.columns__checkbox-svg { pointer-events: none; } 
+.columns__checkbox .cb__box {
+  fill: none;
+  stroke: rgba(44,54,70,0.64);
+  stroke-width: 2;
+  transition: fill .2s ease, stroke .2s ease;
+}
+.columns__checkbox .cb__check {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+  transition: opacity .15s ease;
+}
+
+.columns__checkbox--selected .cb__box { fill: #6f56ff; stroke: #6f56ff; }
+.columns__checkbox--selected .cb__check { opacity: 1; }
+
