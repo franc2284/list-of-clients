@@ -67,3 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateHeaderCheckbox();
 });
 
+const users = JSON.parse(localStorage.getItem('users')) || [];
+console.log(users);
+
+
