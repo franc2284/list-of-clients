@@ -96,4 +96,53 @@ body {
   line-height: 100%;
 }
 
+.meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 540px;
+    margin-left: 80px;
+}
+
+.meta__label {
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 18px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #2C3646A3;
+}
+
+.meta__label--status {
+    margin-bottom: 9.83px;
+}
+.meta__label--data {
+    margin-bottom: 17.83px;
+}
+
+.meta__value {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #2C3646;
+}
+
+.status-badge{
+  display: inline-flex;
+  align-items: center;
+  height: 35px;
+  padding: 8px 16px;
+  border-radius: 99px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.status-badge--active{
+  background: #CEFFCD;
+  color: #337232;
+}
+
 
