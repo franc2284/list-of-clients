@@ -70,4 +70,22 @@ document.addEventListener('DOMContentLoaded', () => {
 const users = JSON.parse(localStorage.getItem('users')) || [];
 console.log(users);
 
+function toggleMenu(btn) {
+  // строка, к которой относится меню
+  const row = btn.closest('.client-row');
+  if (!row) return;
+
+  const menu = row.querySelector('.row-menu');
+  if (!menu) return;
+
+  // спрячем все открытые меню у других строк
+  document.querySelectorAll('.row-menu').forEach(m => {
+    if (m !== menu) m.style.display = 'none';
+  });
+
+  // переключаем текущее
+  menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+}
+
+
 
