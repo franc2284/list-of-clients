@@ -12,3 +12,48 @@ body {
     background: #f3f4ff;
     color: #2C3646;
 }
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+.panel { width: 100%; max-width: 1440px; }
+
+.card {
+  width: 700px;
+  min-height: 730px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(163,163,163,0.25);
+}
+
+.back {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 40px;
+    margin-left: 80px;
+    gap: 8px;
+    color: rgba(44,54,70,0.64);
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 1;
+}
+
+.back__icon-img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.page-title {
+    margin-left: 80px;
+    margin-top: 27px;
+    margin-bottom: 21px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #000;
+}
