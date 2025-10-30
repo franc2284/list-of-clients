@@ -104,6 +104,26 @@ document.addEventListener('click', (e) => {
   document.querySelectorAll('.row-menu').forEach(m => m.style.display = 'none');
 });
 
+document.addEventListener('click', (e) => {
+  const editBtn = e.target.closest('.row-menu__btn1');
+  if (!editBtn) return;
+
+  const row = editBtn.closest('.client-row');
+  if (!row) return;
+
+  const clientData = {
+    name: row.querySelector('.client-row__fullname')?.textContent.trim(),
+    email: row.querySelector('.client-row__email')?.textContent.trim(),
+    company: row.querySelector('.client-row__company')?.textContent.trim(),
+    phone: row.querySelector('.client-row__phone')?.textContent.trim(),
+  };
+
+  localStorage.setItem('editClient', JSON.stringify(clientData));
+  window.location.href = 'pages/edit.html';
+});
+
+
+
 
 
 
