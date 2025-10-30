@@ -11,58 +11,68 @@
 <body>
   <div class="page">
     <section class="panel">
-        <div class="card">
-            <a href="../index.html" class="back" aria-label="Назад к списку клиентов">
-                <img src="../images/heroicons_arrow-up-16-solid (1).svg" class="back__icon-img" alt="" aria-hidden="true">
-                <span class="back__text">Назад</span>
-            </a>
-            <h1 class="page-title">Редактирование клиента</h1>
-
-            <form class="form">
-                    <div class="field">
-                        <label class="field__label" for="f-name">ИМЯ</label>
-                        <input id="f-name" class="field__input" type="text" placeholder="Джон Доу">
-                    </div>
-
-                    <div class="field">
-                        <label class="field__label" for="f-email">КОНТАКТ</label>
-                        <input id="f-email" class="field__input" type="email" placeholder="john.doe@gmail.com">
-                    </div>
-
-                    <div class="field">
-                        <label class="field__label" for="f-company">КОМПАНИЯ</label>
-                        <input id="f-company" class="field__input" type="text" placeholder="Hartmann">
-                    </div>
-
-                    <div class="field">
-                        <label class="field__label" for="f-phone">ТЕЛЕФОН</label>
-                        <input id="f-phone" class="field__input" type="tel" placeholder="+7 (921) 123-45-67">
-                    </div>
-                </form>
+      <div class="card">
+        <a href="../index.html" class="back" aria-label="Назад к списку клиентов">
+          <img src="../images/heroicons_arrow-up-16-solid (1).svg" class="back__icon-img" alt="" aria-hidden="true">
+          <span class="back__text">Назад</span>
+        </a>
+        <h1 class="page-title">Редактирование клиента</h1>
+        
+        <form class="form">
+          <div class="field">
+            <label class="field__label" for="f-name">ИМЯ</label>
+            <input id="f-name" class="field__input" type="text" placeholder="Джон Доу">
+          </div>
+          
+          <div class="field">
+            <label class="field__label" for="f-email">КОНТАКТ</label>
+            <input id="f-email" class="field__input" type="email" placeholder="john.doe@gmail.com">
+          </div>
+          
+          <div class="field">
+            <label class="field__label" for="f-company">КОМПАНИЯ</label>
+            <input id="f-company" class="field__input" type="text" placeholder="Hartmann">
+          </div>
+          
+          <div class="field">
+            <label class="field__label" for="f-phone">ТЕЛЕФОН</label>
+            <input id="f-phone" class="field__input" type="tel" placeholder="+7 (921) 123-45-67">
+          </div>
+        </form>
+        
+        <div class="meta">
+          <div class="meta__col">
+            <div class="meta__label meta__label--status">СТАТУС</div>
+            <div class="meta__row">
+              <span class="status-badge status-badge--active">Активен</span>
+              <button type="button" class="meta__rename-btn">Изменить статус</button>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
   </div>
-
+  
   <script src="../index.js"></script>
   <script>
-    (function () {
-      const dataRaw = localStorage.getItem('editClient');
-      if (!dataRaw) return;
-
-      const data = JSON.parse(dataRaw);
-
-      const setVal = (id, val) => {
-        const el = document.getElementById(id);
-        if (el) el.value = val || '';
-      };
-
-      setVal('f-name', data.name);
-      setVal('f-email', data.email);
-      setVal('f-company', data.company);
-      setVal('f-phone', data.phone);
-
-      localStorage.removeItem('editClient');
-    })();
+  (function () {
+    const dataRaw = localStorage.getItem('editClient');
+    if (!dataRaw) return;
+    
+    const data = JSON.parse(dataRaw);
+    
+    const setVal = (id, val) => {
+      const el = document.getElementById(id);
+      if (el) el.value = val || '';
+    };
+    
+    setVal('f-name', data.name);
+    setVal('f-email', data.email);
+    setVal('f-company', data.company);
+    setVal('f-phone', data.phone);
+    
+    localStorage.removeItem('editClient');
+  })();
   </script>
-</body>
-</html>
+  </body>
+  </html>

@@ -95,3 +95,64 @@ body {
   font-size: 20px;
   line-height: 100%;
 }
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 540px;
+  margin-left: 80px;
+}
+.meta__col{display:flex; flex-direction:column;}
+
+.meta__row{display:flex; align-items:center; gap:15px;}
+
+.meta__rename-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 10px 10px;
+  border-radius: 8px;
+  background: #FFFFFF;
+  border: 0;
+  box-shadow: 0px 0px 7.5px 0px #7C7C7C80;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1;
+  color: #000000;
+  cursor: pointer;
+}
+.meta__rename-btn:hover{
+  background:rgba(44,54,70,0.06);
+}
+
+.meta__label {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: #2C3646A3;
+}
+
+.meta__label--status {
+  margin-bottom: 9.83px;
+}
+
+.status-badge{
+  display: inline-flex;
+  align-items: center;
+  height: 35px;
+  padding: 8px 16px;
+  border-radius: 99px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.status-badge--active{
+  background: #CEFFCD;
+  color: #337232;
+}
