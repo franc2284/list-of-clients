@@ -219,3 +219,7 @@ body {
 }
 .btn--danger:hover{ background: #FFF5F5; }
 .btn--danger:active{ transform: translateY(1px); }
+.status-badge--nonactive{
+  background: #FFD6CD;
+  color: #DF0000;
+}

@@ -36,9 +36,19 @@ function renderUsersIntoDOM(users) {
     setText('.client-row__date',    u.date);
 
     const st = r.querySelector('.status-badge');
-    if (st) st.textContent = u.status || st.textContent;
+    if (st) {
+      const statusText = (u.status === 'Неактивен') ? 'Неактивен' : 'Активен';
+      st.textContent = statusText;
+      st.classList.remove('status-badge--active', 'status-badge--nonactive');
+      if (statusText === 'Активен') {
+        st.classList.add('status-badge--active');
+      } else {
+        st.classList.add('status-badge--nonactive');
+      }
+    }
   });
 }
+
 
 function toggleRow(e) {
   const src = (e && (e.currentTarget || e.target)) || this;

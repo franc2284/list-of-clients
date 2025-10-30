@@ -64,11 +64,27 @@
     </section>
   </div>
 
-  <script>
+<script>
 (function () {
   const idxRaw = localStorage.getItem('editIndex');
   const index = idxRaw !== null ? Number(idxRaw) : -1;
   const users = JSON.parse(localStorage.getItem('users')) || [];
+
+  const $badge = document.querySelector('.status-badge');
+  const $toggleBtn = document.querySelector('.meta__rename-btn');
+
+  function applyStatusUI(status) {
+    if (!$badge) return;
+
+    $badge.textContent = status;
+
+    $badge.classList.remove('status-badge--active', 'status-badge--nonactive');
+    if (status === 'Активен') {
+      $badge.classList.add('status-badge--active');
+    } else {
+      $badge.classList.add('status-badge--nonactive');
+    }
+  }
 
   if (index >= 0 && users[index]) {
     const u = users[index];
@@ -77,26 +93,34 @@
     setVal('f-email', u.email);
     setVal('f-company', u.company);
     setVal('f-phone', u.phone);
+
+    applyStatusUI(u.status === 'Неактивен' ? 'Неактивен' : 'Активен');
+  }
+
+  if ($toggleBtn) {
+    $toggleBtn.addEventListener('click', () => {
+      const current = $badge?.textContent?.trim() === 'Неактивен' ? 'Неактивен' : 'Активен';
+      const next = current === 'Активен' ? 'Неактивен' : 'Активен';
+      applyStatusUI(next);
+    });
   }
 
   const saveBtn = document.getElementById('saveBtn');
   if (saveBtn) {
     saveBtn.addEventListener('click', (e) => {
       e.preventDefault();
-
       if (index < 0 || !users[index]) {
         window.location.href = '../index.html';
         return;
       }
-
       users[index] = {
         ...users[index],
         name: document.getElementById('f-name').value.trim(),
         email: document.getElementById('f-email').value.trim(),
         company: document.getElementById('f-company').value.trim(),
-        phone: document.getElementById('f-phone').value.trim()
+        phone: document.getElementById('f-phone').value.trim(),
+        status: ($badge?.textContent?.trim() === 'Неактивен') ? 'Неактивен' : 'Активен'
       };
-
       localStorage.setItem('users', JSON.stringify(users));
       localStorage.removeItem('editIndex');
       window.location.href = '../index.html';
