@@ -156,3 +156,15 @@ body {
   background: #CEFFCD;
   color: #337232;
 }
+
+.meta__label--data {
+  margin-bottom: 17.83px;
+}
+
+.meta__value {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #2C3646;
+}
