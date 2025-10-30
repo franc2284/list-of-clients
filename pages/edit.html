@@ -56,34 +56,62 @@
         </div>
 
         <div class="actions">
-          <button type="button" class="btn--primary">Сохранить</button>
+          <button type="button" id="saveBtn" class="btn--primary">Сохранить</button>
           <button type="button" class="btn--danger">Отменить</button>
         </div>
 
       </div>
     </section>
   </div>
-  
-  <script src="../index.js"></script>
+
   <script>
-  (function () {
-    const dataRaw = localStorage.getItem('editClient');
-    if (!dataRaw) return;
-    
-    const data = JSON.parse(dataRaw);
-    
-    const setVal = (id, val) => {
-      const el = document.getElementById(id);
-      if (el) el.value = val || '';
-    };
-    
-    setVal('f-name', data.name);
-    setVal('f-email', data.email);
-    setVal('f-company', data.company);
-    setVal('f-phone', data.phone);
-    
-    localStorage.removeItem('editClient');
-  })();
-  </script>
+(function () {
+  const idxRaw = localStorage.getItem('editIndex');
+  const index = idxRaw !== null ? Number(idxRaw) : -1;
+  const users = JSON.parse(localStorage.getItem('users')) || [];
+
+  if (index >= 0 && users[index]) {
+    const u = users[index];
+    const setVal = (id, val) => { const el = document.getElementById(id); if (el) el.value = val || ''; };
+    setVal('f-name', u.name);
+    setVal('f-email', u.email);
+    setVal('f-company', u.company);
+    setVal('f-phone', u.phone);
+  }
+
+  const saveBtn = document.getElementById('saveBtn');
+  if (saveBtn) {
+    saveBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      if (index < 0 || !users[index]) {
+        window.location.href = '../index.html';
+        return;
+      }
+
+      users[index] = {
+        ...users[index],
+        name: document.getElementById('f-name').value.trim(),
+        email: document.getElementById('f-email').value.trim(),
+        company: document.getElementById('f-company').value.trim(),
+        phone: document.getElementById('f-phone').value.trim()
+      };
+
+      localStorage.setItem('users', JSON.stringify(users));
+      localStorage.removeItem('editIndex');
+      window.location.href = '../index.html';
+    });
+  }
+
+  const cancel = document.querySelector('.btn--danger');
+  if (cancel) {
+    cancel.addEventListener('click', () => {
+      localStorage.removeItem('editIndex');
+      window.location.href = '../index.html';
+    });
+  }
+})();
+</script>
+
   </body>
   </html>
